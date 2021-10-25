@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://cdn.pixabay.com/photo/2019/06/12/07/12/popcorn-4268489_1280.jpg">
+    <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <title>Movie App</title>
@@ -34,63 +36,43 @@
 
     </header>
 
-    <form name="myform" onsubmit="check(this.submited); return false;">
-        <input type="text" placeholder="Search Movie Name..." id="search" class="search" />
-        <button type="submit" id="searchBtn" name="general_search" value="blabla">Search<i
-                class="fas fa-search"></i></button>
-        <h5>Sort List</h5>
-        <div id="sortButtonWrapper">
-            <input onclick="this.form.submited=this.value;" type="submit" value="Recent Released Movies" />
-            <input onclick="this.form.submited=this.value;" type="submit" value="Popular Movies" />
-        </div>
-    </form>
+    <div class="col-4 text-right switch-view">
+        <!-- card view button -->
+        <button type="button" class="btn btn-lg p-0 m-2" data-display="card">
+            <i class="fas fa-th" data-display="card"></i>
+        </button>
 
-    <!-- display mode -->
-    <div class="col">
-        <div class="display-mode" id="mode-btn">
-            <i class="fa fa-th"></i>
-            <i class="fa fa-bars"></i>
-        </div>
+        <!-- list view button -->
+        <button type="button" class="btn btn-lg p-0 m-2" data-display="list">
+            <i class="fas fa-bars" data-display="list"></i>
+        </button>
     </div>
     </div>
 
 
-    <!-- movie items -->
-    <div class="row" id="data-panel">
+    <div class="form-group ">
+        <input type="search" name="" id="searchBox" placeholder="Search for movies and TV-series">
+        <div class="year">
+            <select id="date">
+                <option value="year">Select Year</option>
+            </select>
+        </div>
+        <div class="form-group-select">
+            <select name="" id="selector" class="selector">
+                <option value="movies">movies</option>
+                <option value="series">series</option>
+            </select>
+        </div>
     </div>
     </div>
-
-    <!-- <form id="form" class="search_bar_wrapper">
-        <input type="text" placeholder="Search Movie Name..." id="search" class="search" />
-        <button type="submit" id="searchBtn" name="general_search" value="blabla">Search<i
-                class="fas fa-search"></i></button>
-
-        <div id="mode-btn">
-            <i class="fa fa-bars " aria-hidden="true" data-type="line"></i>
-            <i class="fa fa-th " aria-hidden="true" data-type="block"></i>
-        </div>
-
-        <div id="movieGenre">
-            <button id="genre_nowShowing_btn">NOW SHOWING Movies List</button>
-        </div>
-    </form> -->
+    <div class="container">
+        <div class="movies"></div>
+    </div>
 
 
-    <main id="main">
-        <div class="movie">
-            <img src="https://cdn.pixabay.com/photo/2019/05/19/10/40/cinema-4213751_1280.jpg" alt="image">
 
-            <div class="movie-info">
-                <h3>Movie Title</h3>
-                <span class="green">9.8</span>
-            </div>
-
-            <div class="overview">
-                <h4>Overview</h4>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </div>
-        </div>
-    </main>
+    <!-- <main id="main">
+    </main> -->
 
     <!-- paginator -->
     <nav aria-label="Page navigation">
