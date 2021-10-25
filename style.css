@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2c3949;
+    --secondary-color: #373b69
+}
+
+body {
+    background: var(--primary-color);
+    font-family: 'Nunito Sans', sans-serif;
+    margin: 0;
+}
+
+header {
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    background-color: var(--secondary-color);
+}
+
+#navbar .navbar-brand {
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    display: inline-block;
+    border: 4px double;
+    padding: 0.25em 5px 0.325em;
+}
+
+#navbar .navbar-brand span {
+    font-weight: 900;
+}
+
+#navbar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#navbar a.icon {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 11px;
+    margin-right: 20px;
+}
+
+#navbar ul li {
+    list-style: none;
+}
+
+#navicon {
+    width: 35px;
+    height: 35px;
+    padding: 9px;
+    border: 2px solid;
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+    margin-top: 5px;
+}
+
+#navicon:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+}
+
+#myLinks {
+    display: none;
+}
+
+#mode-btn {
+    display: inline-block;
+    float: right;
+    margin-right: 20px;
+    font-size: 30px;
+}
+
+.search {
+    background-color: transparent;
+    border: 2px solid var(--secondary-color);
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #7378c5;
+    font-family: inherit;
+}
+
+.search:focus {
+    outline: 0;
+    background-color: var(--primary-color);
+}
+
+.search::placeholder {
+    color: #7378c5;
+}
+
+#searchBtn {
+    color: #7378c5;
+    border-radius: 50px;
+    background-color: transparent;
+    padding: 0.25rem 1rem;
+    font-size: 1rem;
+    font-family: inherit;
+    margin-right: 100px;
+}
+
+#form {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+}
+
+#main .movie {
+    position: relative;
+    width: 15rem;
+    height: 30rem;
+    align-items: center;
+    margin: 40px 30px;
+    transition: 0.5s;
+    border: 2px solid;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: context-menu;
+}
+
+#main .movie::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50px;
+    /* width: 50%; */
+    height: 100%;
+    background: #fff;
+    border-radius: 8px;
+    transform: skewX(15deg);
+}
+
+#main .movie::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 42%;
+    background: #fff;
+    border-radius: 8px;
+    transform: skewX(15deg);
+    transition: 0.5s;
+    filter: blur(30px);
+    background: linear-gradient(300deg, #03a9f4, #ff0058);
+}
+
+#main .movie:hover::before,
+#main .movie:hover::after {
+    transform: skewX(0deg);
+    left: 20px;
+}
+
+.movie img {
+    width: 100%;
+    height: 20rem;
+    position: inherit;
+    z-index: 1;
+    border-radius: 8px;
+}
+
+.overview {
+    z-index: 1;
+    position: absolute;
+    padding: 0.5rem 1rem;
+}
+
+.overview h4 {
+    margin: 0px auto;
+}
+
+.movie-info {
+    z-index: 1;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+}
+
+.movie-info h3 {
+    margin-top: 0;
+}
+
+.movie-info span {
+    background-color: var(--primary-color);
+    padding: 8px 8px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.movie-info span.green {
+    color: lightseagreen;
+}
+
+.movie-info span.orange {
+    color: orange;
+}
+
+.movie-info span.red {
+    color: tomato;
+}
+
+#tags {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+}
+
+.tag {
+    color: #fff;
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    border-radius: 50px;
+    margin: 5px;
+    display: inline-block;
+    cursor: pointer;
+}
